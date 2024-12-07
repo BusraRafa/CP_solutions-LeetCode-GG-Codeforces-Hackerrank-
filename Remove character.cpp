@@ -15,12 +15,12 @@ class Solution {
 }
 for(int i=0;i<len1;i++){
 if((string1[i]>='a'& string1[i]<='z') | (string1[i]>='A'& string1[i]<='Z' )){
-    temp=temp+string1[i];
+    temp.push_back(string1[i]);
 }
 }
-string1=temp;
+//string1=temp;
 
-return string2,string1;
+return string2,temp;
     }
 };
 int main() {
