@@ -1,3 +1,22 @@
+//****************withOUT Space complexity ****************
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        vector<int> prefix(nums.size());
+        long long mul=1;
+        prefix[0]=1;
+        for(int i=1;i<nums.size();i++){
+        prefix[i]= prefix[i-1] *nums[i-1];
+        }
+        for(int i=nums.size()-2;i>=0;i--){
+         mul=nums[i+1]*mul;
+        prefix[i]=prefix[i]*mul;
+        }
+        return prefix;
+    }
+};
+//****************with Space complexity****************
+/*
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
@@ -19,3 +38,4 @@ public:
         return v;
     }
 };
+*/
